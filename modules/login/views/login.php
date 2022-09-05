@@ -1,58 +1,66 @@
-<?php include '../../include/views/head.php'; ?>
+<!doctype html>
+<html lang="en">
 
-<!-- <script type="text/javascript">
-    if (sessionStorage.getItem('firstname')) location.href = "../../home/views/";
-</script> -->
+<head>
+    <title>El Fogón Histórico</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link href="../../../css/styles.css" rel="stylesheet" />
-<link href="../css/index.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
-<body class="green lighten-1 login">
-    <!-- Pills navs -->
-   
-    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link href="../../../img/fogon.jpg" rel="icon">
 
-            <!-- Tabs Titles -->
+</head>
 
-            <!-- Icon -->
-            <div class="fadeIn first">
-                <img src="../../../img/memimo.png" id="icon" alt="User Icon" />
+<body class="img js-fullheight" style="background-image: url(../../../images/bg.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">EL FOGÓN HISTÓRICO</h2>
+                </div>
             </div>
-
-            <!-- Login Form -->
-            <form id="loginForm" onsubmit="logIn()">
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario / Email">
-                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-                <input type="submit" id="login" class="fadeIn fourth" value="Ingresar">
-            </form>
-
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">¿Olvidó su contraseña?</a>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <!-- <h3 class="mb-4 text-center">Have an account?</h3> -->
+                        <form id="loginForm" onsubmit="logIn()">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Usuario" required id="login" name="login">
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" class="form-control" placeholder="Password" required name="pass">
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Iniciar sesión</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </div>
+    </section>
 
-
-
-
-    <!-- Pills content -->
+    <script src="../../../js/jquery.min.js"></script>
+    <script src="../../../js/popper.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/main.js"></script>
 
     <script>
         window.onload = function() {
-            $("#login").val('sdfsd');
-            $("#password").val('sdfsd');
+            $("#login").val('');
+            $("#password-field").val('');
         };
 
         setTimeout(function() {
             $("#login").val('jordan');
-            $("#password").val('123');
+            $("#password-field").val('123');
             console.clear()
-        }, 500);
+        }, 1000);
 
         $("form").submit(function(e) {
             e.preventDefault();
@@ -60,9 +68,9 @@
 
         function logIn() {
             var user = document.getElementById("login").value;
-            var pass = document.getElementById("password").value;
+            var pass = document.getElementById("password-field").value;
             let session = null;
-            // alert("User: " + user + ", pass: " + pass);
+            // alert("User: " + user + ", password: " + pass);
 
             var credentials = {
                 user,
@@ -78,7 +86,7 @@
                     valores: JSON.stringify(login)
                 },
                 success: function(response) {
-                    // console.log(response)
+                    console.log(response)
                 }
             }).done(function(result) {
                 if (result) session = JSON.parse(result);
@@ -88,47 +96,17 @@
                     sessionStorage.setItem('firstname', session.firstname);
                     sessionStorage.setItem('lastname', session.lastname);
                     sessionStorage.setItem('user', session.user);
-                    swal({
-                        title: "MEMIMO",
-                        text: `Bienvenido ${session.firstname} ${session.lastname}`,
-                        icon: "success",
-                        // button: "Cerrar",
-                        buttons: {
-                            confirm: {
-                                text: "Cerrar",
-                                value: true,
-                                visible: true,
-                                className: "",
-                                closeModal: true
-                            }
-                        }
+                    alert(`Bienvenido ${session.firstname} ${session.lastname}`);
 
-                    }).then((value) => {
-                        if (value)
-                            location.href = "../../home/views";
-                        // switch (value) {
-                        //     case "defeat":
-                        //         swal("Pikachu fainted! You gained 500 XP!");
-                        //         break;
-                        //     case "catch":
-                        //         swal("Gotcha!", "Pikachu was caught!", "success");
-                        //         break;
-                        //     default:
-                        //         swal("Got away safely!");
-                        // }
-                    });;
-                } else swal({
-                    title: "MEMIMO",
-                    text: 'Revise las credenciales ingresadas',
-                    icon: "warning",
-                    button: "Cerrar",
-                });
+
+                    location.href = "../../../";
+                } else alert('Revise las credenciales ingresadas');
             }).fail(function(error) {
                 alert("Error petición de inicio de sesión: " + error);
             });
-
         }
     </script>
+
 </body>
 
 </html>

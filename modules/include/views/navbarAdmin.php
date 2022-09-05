@@ -1,133 +1,48 @@
-<div class="d-flex" id="wrapper">
-        <!-- Sidebar-->
-        <div class="border-end bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading border-bottom bg-light" style="color: #DE0055; font-weight: bold">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                Menú
-            </div>
-            <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;Usuarios</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Clientes</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;Productos</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;Ventas</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-th-list" aria-hidden="true"></i>&nbsp;Gestion de ventas</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!"><i class="fa fa-file" aria-hidden="true"></i>&nbsp;Rerporteria</a>
-            </div>
-        </div>
-        <!-- Page content wrapper-->
-        <div id="page-content-wrapper">
-            <!-- Top navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <div class="container-fluid">
-                    <!-- <button class="btn btn-primary" id="sidebarToggle"> -->
-                    <img id="sidebarToggle" width="2.5%" src="../../../img/memimo.png" id="icon" alt="LOGO" />
-                    <!-- </button> -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="./" style="color: #DE0055; font-weight: bold;">&nbsp;<i class="fa fa-home" aria-hidden="true"></i>Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!" style="color: #DE0055; font-weight: bold;"><i class="fa fa-shopping-basket" aria-hidden="true"></i>&nbsp;Tienda</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #DE0055; font-weight: bold;">
-                                    <i class="fa fa-user" aria-hidden="true"></i>&nbsp;
-                                    <script>
-                                        if (localStorage?.getItem('idu')) {
-                                            document.write(localStorage.getItem('firstname'), ' ', localStorage.getItem('lastname'));
-                                        } else document.write('Iniciar sesión')
-                                    </script>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#!"><i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;Ver perfil</a>
-                                    <a class="dropdown-item" href="#!"><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Cambiar contraseña</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="../../login/views/logoutExito.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Cerrar sesión</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Page content-->
-            <div class="container-fluid">
-                <div class="container-fluid px-1 py-5 mx-auto">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                            <h3>Request a Demo</h3>
-                            <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for you.</p>
-                            <div class="card">
-                                <h5 class="text-center mb-4">Powering world-class companies</h5>
+<header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                                <form class="form-card" onsubmit="event.preventDefault()">
-                                    <div class="row justify-content-between text-left">
-                                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label ">First name<span class="text-danger"> *</span></label> <input type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> </div>
-                                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label ">Last name<span class="text-danger"> *</span></label> <input type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)"> </div>
-                                    </div>
-                                    <div class="row justify-content-between text-left">
-                                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label ">Business email<span class="text-danger"> *</span></label> <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> </div>
-                                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label ">Phone number<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
-                                    </div>
-                                    <div class="row justify-content-between text-left">
-                                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label ">Job title<span class="text-danger"> *</span></label> <input type="text" id="job" name="job" placeholder="" onblur="validate(5)"> </div>
-                                    </div>
-                                    <div class="row justify-content-between text-left">
-                                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label ">What would you be using Flinks for?<span class="text-danger"> *</span></label> <input type="text" id="ans" name="ans" placeholder="" onblur="validate(6)"> </div>
-                                    </div>
-                                    <div class="pt-4 d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <button class="btn btn-primary me-md-2" type="button">Button</button>
-                                        <button class="btn btn-primary" type="button">Button</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">El Fogón Histórico</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-4">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
-                    <br>
-                    <br>
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <h1 class="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
-                </div>
-            </div>
-        </div>
-
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre nosotros</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menú</a></li>
+          <li><a class="nav-link scrollto" href="#specials">Specialidades</a></li>
+          <li><a class="nav-link scrollto" href="#events">Eventos</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallería</a></li>
+          <li class="dropdown"><a href="#"><span>Administración</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Clientes</a></li>
+              <li class="dropdown"><a href="#"><span>Reservaciones</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Agregar</a></li>
+                  <li><a href="#">Confirmar</a></li>
+                  <li><a href="#">Modificar</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Eventos</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Ver</a></li>
+                  <!-- <li><a href="#">Modificar</a></li> -->
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contactanos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Opiniones</a> -->
+      <!-- <a href="" class="book-a-table-btn scrollto d-none d-lg-flex"> -->
+        <script>
+          if (sessionStorage?.getItem('idu')) {
+            document.write(` <a href="./modules/login/views/logoutExito.php" class="book-a-table-btn scrollto d-none d-lg-flex"> ${sessionStorage.getItem('firstname')} ${sessionStorage.getItem('lastname')} </a>`);
+          } else document.write(` <a href="./modules/login/views/login.php" class="book-a-table-btn scrollto d-none d-lg-flex"> Iniciar sesión </a>`);
+        </script>
+      <!-- </a> -->
 
     </div>
+  </header><!

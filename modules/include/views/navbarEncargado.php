@@ -13,23 +13,24 @@
           <li><a class="nav-link scrollto" href="#specials">Specialidades</a></li>
           <li><a class="nav-link scrollto" href="#events">Eventos</a></li>
           <li><a class="nav-link scrollto" href="#gallery">Gallería</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Administración</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Administración</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Clientes</a></li>
               <li class="dropdown"><a href="#"><span>Reservaciones</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Agregar</a></li>
-                  <li><a href="#">Modificar</a></li>
+                  <!-- <li><a href="#">Agregar</a></li> -->
+                  <li><a href="#">Confirmar</a></li>
+                  <!-- <li><a href="#">Modificar</a></li> -->
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Eventos</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Agregar</a></li>
-                  <li><a href="#">Modificar</a></li>
+                  <li><a href="#">Ver</a></li>
+                  <!-- <li><a href="#">Modificar</a></li> -->
                 </ul>
               </li>
             </ul>
-          </li> -->
+          </li>
           <li><a class="nav-link scrollto" href="#contact">Contactanos</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -45,3 +46,4 @@
 
     </div>
   </header><!
+  

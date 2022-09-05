@@ -13,31 +13,12 @@
     <!------ Include the above in your HEAD tag ---------->
     <script>
         function alertaLogOut() {
-            swal({
-                title: "MEMIMO",
-                text: `¡Sesión cerrada exitosamente!`,
-                icon: "warning",
-                // button: "Cerrar",
-                buttons: {
-                    confirm: {
-                        text: "Cerrar",
-                        value: true,
-                        visible: true,
-                        className: "",
-                        closeModal: true
-                    }
-                }
-
-            }).then((value) => {
-                if (value) {
-                    localStorage.removeItem('idu');
-                    localStorage.removeItem('rol');
-                    localStorage.removeItem('firstname');
-                    localStorage.removeItem('lastname');
-                    localStorage.removeItem('user');
-                    location.href = "../../home/views";
-                }
-            });
+            sessionStorage.removeItem('idu');
+            sessionStorage.removeItem('rol');
+            sessionStorage.removeItem('firstname');
+            sessionStorage.removeItem('lastname');
+            sessionStorage.removeItem('user');
+            location.href = "../../../";
         }
 
 
